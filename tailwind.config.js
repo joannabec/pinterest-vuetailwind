@@ -16,7 +16,13 @@ module.exports = {
 			},
 			spacing: {
 				'250px': '250px'
-			}
+			},
+			screens: {
+				'max': {'max': '767px'}
+			},
+			boxShadow: {
+				'pin': '0 0 8px rgb(0 0 0/0.1)'
+			},
 		},
 	},
 	variants: {

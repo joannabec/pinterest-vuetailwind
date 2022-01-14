@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+	.masonry {
+		columns: 4 250px;
+		column-gap: 1rem;
+	}
+
+	.button:active {
+		@apply: bg-white;
+	}
+
+	.break-inside {
+		break-inside: avoid;
+	}
+
+	.menu {
+		@apply max:w-40 max:flex max:flex-col max:absolute max:bg-white max:z-10 max:rounded-xl max:shadow-pin;
+	}
+
+	.menu button {
+		@apply max:text-left max:bg-transparent max:text-dark;
+	}
+
+	.flex-center {
+		@apply flex items-center justify-center;
+	}
+}
