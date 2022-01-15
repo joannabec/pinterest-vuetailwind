@@ -1,5 +1,6 @@
 import { createApp } from 'vue';
 import App from './App.vue';
+import './assets/tailwind.css';
 
 import BaseButton from './components/ui/BaseButton';
 import BaseCard from './components/ui/BaseCard'

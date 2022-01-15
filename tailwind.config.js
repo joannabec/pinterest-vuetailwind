@@ -1,20 +1,29 @@
+function withOpacityValue(variable) {
+  return ({ opacityValue }) => {
+    if (opacityValue === undefined) {
+      return `rgb(var(${variable}))`;
+    }
+    return `rgb(var(${variable}) / ${opacityValue})`;
+  };
+}
+
 module.exports = {
 	purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
 	darkMode: false, // or 'media' or 'class'
 	theme: {
 		extend: {
 			colors: {
-				primary: '#E60023',
-				redHover: '#ad081b',
-				dark: '#111111',
-				light: '#EFEFEF',
-				lightHover: '#d7d7d7',
-				muted: '#717171'
+				primary: withOpacityValue('--color-primary'),
+				primaryHover: withOpacityValue('--color-primary-hover'),
+				dark: withOpacityValue('--color-dark'),
+				light: withOpacityValue('--color-light'),
+				lightHover: withOpacityValue('--color-light-hover'),
+				muted: withOpacityValue('--color-muted'),
 			},
 			cursor: {
 				'zoom-in': 'zoom-in'
 			},
-			spacing: {
+			columns: {
 				'250px': '250px'
 			},
 			screens: {

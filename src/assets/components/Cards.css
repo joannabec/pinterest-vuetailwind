@@ -1,0 +1,29 @@
+.cards-container {
+	@apply px-20 pb-10 box-border mx-auto gap-4;
+	/* masonry  */
+	columns: 236px;
+}
+
+.break-inside {
+	break-inside: avoid;
+}
+
+.card-footer {
+	@apply text-sm leading-tight pt-2 w-full;
+}
+
+.card-title {
+	@apply font-bold hover:underline block;
+}
+
+.card-content {
+	@apply absolute bg-dark bg-opacity-50 inset-0 rounded-lg w-full h-full flex flex-col justify-between p-3 cursor-zoom-in;
+}
+
+.card-top-btn {
+	@apply flex items-center justify-between;
+}
+
+.card-bot-btn {
+	@apply flex ml-auto gap-1.5;
+}

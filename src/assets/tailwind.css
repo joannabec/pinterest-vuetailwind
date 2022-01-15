@@ -2,29 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-	.masonry {
-		columns: 4 250px;
-		column-gap: 1rem;
+@layer base {
+	:root {
+		--color-primary: 230 0 35;
+		--color-primary-hover: 173 8 27;
+		--color-dark: 17 17 17;
+		--color-light: 239 239 239;
+		--color-light-hover: 215 215 215;
+		--color-muted: 113 113 113;
 	}
+}
 
-	.button:active {
-		@apply: bg-white;
-	}
-
-	.break-inside {
-		break-inside: avoid;
-	}
-
-	.menu {
-		@apply max:w-40 max:flex max:flex-col max:absolute max:bg-white max:z-10 max:rounded-xl max:shadow-pin;
-	}
-
-	.menu button {
-		@apply max:text-left max:bg-transparent max:text-dark;
-	}
-
-	.flex-center {
-		@apply flex items-center justify-center;
-	}
+@layer components {
+	@import './components/Buttons.css';
+	@import './components/Header.css';
+	@import './components/Cards.css';
 }

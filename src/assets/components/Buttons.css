@@ -1,0 +1,19 @@
+.btn {
+	@apply flex items-center rounded-full font-semibold md:focus:outline-none md:focus:ring duration-300;
+}
+
+.btn-flat {
+	@apply py-3 px-4 justify-center text-dark md:hover:bg-light;
+}
+
+.btn-primary {
+	@apply py-3 px-4 bg-primary md:hover:bg-primaryHover text-white;
+}
+
+.btn-dark {
+	@apply py-3 px-4 md:bg-dark md:text-white md:hover:bg-dark md:hover:text-white;
+}
+
+.btn-semi {
+	@apply w-8 h-8 justify-center bg-white hover:bg-opacity-100 text-dark bg-opacity-75;
+}

@@ -1,0 +1,55 @@
+.header {
+	@apply px-3 py-4 flex items-center justify-between;
+}
+
+.nav-box {
+	@apply flex items-center;
+}
+
+.nav-logo {
+	@apply h-6 w-6 object-cover;
+}
+
+.nav-list {
+	@apply max:w-40 max:flex-col max:absolute max:bg-white max:z-10 max:rounded-xl max:shadow-pin;
+}
+
+.nav-expand-mobile {
+	@apply flex items-center md:hidden;
+}
+
+.nav-mobile-check {
+	@apply md:hidden absolute right-4 pt-1;
+}
+
+.search-box {
+	@apply flex items-center justify-end md:justify-start flex-grow relative;
+}
+
+.search-input {
+	@apply hidden md:block text-muted w-full hover:bg-lightHover rounded-full bg-light py-3 pr-3 pl-10 focus:outline-none focus:ring;
+}
+
+.search-icon {
+	@apply absolute text-muted md:ml-3 text-3xl md:text-2xl;
+}
+
+.profile-menu {
+	@apply flex items-center;
+}
+
+.profile-control {
+	@apply relative h-12 w-12;
+}
+
+.profile-icon {
+	@apply text-3xl text-muted;
+}
+
+.profile-alert {
+	@apply rounded-full h-5 w-5 bg-primary text-white flex justify-center items-center absolute mb-5 ml-4;
+}
+
+.profile-picture {
+	@apply h-6 w-6 rounded-full object-cover;
+}
