@@ -45,7 +45,13 @@
 			<base-button class="mr-9 md:mr-0">
 				<span class="material-icons search-icon">search</span>
 			</base-button>
-			<input class="search-input" placeholder="Search" type="text" />
+			<input
+				class="search-input"
+				placeholder="Search"
+				type="text"
+				v-model.trim="searchingTerm"
+				@keyup="search"
+			/>
 		</div>
 
 		<div class="profile-menu">
@@ -60,7 +66,7 @@
 			<base-button :link="true" mode="flat" class="p-3">
 				<img src="profile.jpg" alt="profile picture" class="profile-picture" />
 			</base-button>
-			<base-button mode="flat" class="h-6 w-6">
+			<base-button mode="flat" class="h-6 w-6 p-0">
 				<span class="material-icons text-muted">expand_more</span>
 			</base-button>
 		</div>
@@ -68,10 +74,13 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
 	name: 'TheHeader',
 	data() {
 		return {
+			searchingTerm: '',
 			position: 'top-2',
 			isOpen: false,
 			home: 'dark',
@@ -79,6 +88,19 @@ export default {
 		};
 	},
 	methods: {
+		...mapActions(['filterCards']),
+		search(e) {
+			if (this.searchingTerm && e.key === 'Enter') {
+				this.filterCards({
+					type: 'filter',
+					term: this.searchingTerm,
+				});
+			} else if (!this.searchingTerm) {
+				this.filterCards({
+					type: 'all',
+				});
+			}
+		},
 		selectedBtn(val) {
 			if (val === 'home') {
 				this.position = 'top-2';
